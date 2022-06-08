@@ -2,7 +2,6 @@ function TableController($scope, $element, $attrs) {
     var ctrl = this;
   
     ctrl.$onInit = function(){
-        ctrl.username = "jack";
     }
     ctrl.users = [
         {id: 1, name: "joe", username: "joe123"},
