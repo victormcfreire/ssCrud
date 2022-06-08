@@ -8,5 +8,5 @@ angular.module("ssCrud").config(function($routeProvider){
     $routeProvider.when("/editUser", {
         templateUrl: "view/editForm.html"
     });
-    $routeProvider.otherwise({ redirectTo: "/home" })
+    $routeProvider.otherwise({ redirectTo: "/list" })
 });
