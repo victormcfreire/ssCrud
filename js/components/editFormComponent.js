@@ -1,3 +1,3 @@
-angular.module("ssCrud").component("ssEditform", {
+angular.module("appModule").component("ssEditform", {
     templateUrl: "view/editForm.html"
 });

@@ -1,1 +1,1 @@
-angular.module("ssCrud", ['ngRoute']);
+angular.module("appModule", ['ngRoute', 'listModule']);

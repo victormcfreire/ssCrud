@@ -9,10 +9,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="user in $ctrl.users">
-                <td>
-                    <div style="text-align: center;">
-                        <input class="form-check-input" type="checkbox" value="" ng-model="user.selected" ng-click="verifyUserSelected($ctrl.users)">
+            <tr ng-repeat="user in $ctrl.users | filter: $scope.searchInput">
+                <td style="text-align: center;">
+                    <div>
+                        <input class="form-check-input" type="checkbox" value="" ng-model="user.selected" ng-click="$ctrl.verifyUserSelected($ctrl.users)">
                     </div> 
                 </td>
                 <td> {{user.id}} </td>

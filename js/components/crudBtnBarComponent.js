@@ -1,11 +1,26 @@
 function CrudBtnController($scope, $element, $attrs) {
-    var ctrl = this;
+  var ctrl = this;
   
-    ctrl.$onInit = function(){
-    }
+  ctrl.clicks = 0;
+
+  ctrl.output = function(){
+    return $scope.scopeMessage;
   }
 
-angular.module("ssCrud").component("ssCrudbtn", {
-    templateUrl: "view/crudBtnBar.html",
-    controller: CrudBtnController
+  ctrl.contarClicks = function () {
+    console.log("clicou");
+    ctrl.clicks++;
+  }
+
+  ctrl.deleteUsers = function (users) {
+    var selectedUsers = users.filter(function (user) {
+      if (user.selected) return user;
+    });
+    console.log(selectedUsers);
+  }
+}
+
+angular.module("appModule").component("ssCrudbtn", {
+  templateUrl: "view/crudBtnBar.html",
+  controller: CrudBtnController
 });

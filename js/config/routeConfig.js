@@ -1,4 +1,4 @@
-angular.module("ssCrud").config(function($routeProvider){
+angular.module("appModule").config(function($routeProvider){
     $routeProvider.when("/list", {
         templateUrl: "view/list.html"
     });

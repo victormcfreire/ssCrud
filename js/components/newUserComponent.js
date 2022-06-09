@@ -1,5 +1,5 @@
 
-angular.module("ssCrud").component("ssNewuser", {
+angular.module("appModule").component("ssNewuser", {
     templateUrl: "view/newUser.html",
     controller: "newUserCtrl"
 })

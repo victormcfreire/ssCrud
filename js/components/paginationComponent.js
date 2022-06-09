@@ -8,7 +8,7 @@ function PaginationCtrl($scope){
     }
 }
 
-angular.module("ssCrud").component("ssPagination", {
+angular.module("appModule").component("ssPagination", {
     templateUrl: "view/pagination.html",
     controller: PaginationCtrl
 });

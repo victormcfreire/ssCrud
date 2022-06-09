@@ -1,3 +1,3 @@
-angular.module("ssCrud").component("ssSearchbar", {
+angular.module("appModule").component("ssSearchbar", {
     templateUrl: "view/searchBar.html"
 });
