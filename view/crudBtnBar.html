@@ -1,13 +1,13 @@
-Ctrl : {{$ctrl.clicks}}
-<input type="text" ng-model="scopeMessage"> {{$ctrl.output()}}
+Clicks : {{$ctrl.clicks}}
+<input type="text" ng-model="myMessage"> {{$ctrl.output()}}
 <div class="row" style="float: right;">
     <div class="form-outline" style="margin-right: 5px;">
-        <ss-searchbar></ss-searchbar>
+        <ss-searchbar ng-model="$ctrl.ngModel" ng-change="$ctrl.ngModelChange()"></ss-searchbar>
     </div>
     <div>
         <button class="btn btn-secondary btn-sm" ng-click="$ctrl.contarClicks()">Consultar</button>
         <a class="btn btn-primary btn-sm" href="#!/newUser">Novo</a>
-        <a class="btn btn-warning btn-sm" href="#!/editUser">Alterar</a>
+        <a class="btn btn-warning btn-sm" href="#!editForm/{{$ctrl.user.id}}">Alterar</a>
         <button class="btn btn-danger btn-sm" type="button" ng-click="$ctrl.deleteUsers($ctrl.users)">Excluir</button>
     </div>
 </div>

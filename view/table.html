@@ -9,15 +9,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="user in $ctrl.users | filter: $scope.searchInput">
+            <tr dir-paginate="user in data | filter: $scope.search | itemsPerPage: 6 track by user.id">
                 <td style="text-align: center;">
                     <div>
                         <input class="form-check-input" type="checkbox" value="" ng-model="user.selected" ng-click="$ctrl.verifyUserSelected($ctrl.users)">
                     </div> 
                 </td>
-                <td> {{user.id}} </td>
-                <td> {{user.name}} </td>
-                <td> {{user.username}} </td>
+                <td> {{ ::user.id}} </td>
+                <td> {{ ::user.name}} </td>
+                <td> {{ ::user.username}} </td>
+                <td> {{ ::user.selected}} </td>
             </tr>
         </tbody>
     </table>

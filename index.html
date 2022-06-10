@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/app.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="lib/angular-route.js"></script>
+    <script src="lib/dirPagination.js"></script>
+    <script src="data.json"></script>
     <script src="js/app.js"></script>
     <script src="js/modules/listModule.js"></script>
     <script src="js/components/listComponent.js"></script>
@@ -23,6 +25,7 @@
     <script src="js/components/newUserComponent.js"></script>
     <script src="js/components/editFormComponent.js"></script>
     <script src="js/controllers/ssCrudCtrl.js"></script>
+    <script src="js/services/usersAPI.js"></script>
     <!-- 
     -->
     <title>ssCRUD</title>
@@ -30,7 +33,7 @@
 
 <body>
     <div ng-view></div>
-
+    
     <div class="modal fade" id="excluirModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">

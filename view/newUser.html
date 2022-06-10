@@ -18,28 +18,31 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    <div class="form-outline">
-                        <input class="form-control form-control-sm" name="id" type="number" ng-model="user.id">
-                    </div>
-                </td>
-                <td> 
-                    <div class="form-outline">
-                        <input class="form-control form-control-sm" name="name" type="text" ng-model="user.name">
-                    </div>
-                 </td>
-                <td> 
-                    <div class="form-outline">
-                        <input class="form-control form-control-sm" name="username" type="text" ng-model="user.username">
-                    </div>
-                </td>
-                <td> 
-                    <div class="form-outline">
-                        <input class="form-control form-control-sm" name="password" type="password" ng-model="user.password">
-                    </div> 
-                </td>
-            </tr>
+            <form name="userForm">
+                <tr>
+                    <td>
+                        <div class="form-outline">
+                            <input class="form-control form-control-sm" name="id" type="number" ng-model="user.id" ng-required="true">
+                        </div>
+                    </td>
+                    <td> 
+                        <div class="form-outline">
+                            <input class="form-control form-control-sm" name="name" type="text" ng-model="user.name" ng-required="true">
+                        </div>
+                        output: {{$ctrl.output()}}
+                    <td> 
+                        <div class="form-outline">
+                            <input class="form-control form-control-sm" name="username" type="text" ng-model="user.username" ng-required="true">
+                        </div>
+                    </td>
+                    <td> 
+                        <div class="form-outline">
+                            <input class="form-control form-control-sm" name="password" type="password" ng-model="user.password" ng-required="true">
+                        </div> 
+                    </td>
+                </tr>
+            </form>
+            {{user}}
         </tbody>
     </table>
 </div>

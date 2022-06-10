@@ -1,10 +1,14 @@
 function CrudBtnController($scope, $element, $attrs) {
   var ctrl = this;
-  
+
+  ctrl.ngModelChange = function () {
+    this.ngModelCtrl.$setViewValue(this.ngModel);
+  }
+
   ctrl.clicks = 0;
 
-  ctrl.output = function(){
-    return $scope.scopeMessage;
+  ctrl.output = function () {
+    return $scope.myMessage;
   }
 
   ctrl.contarClicks = function () {
@@ -12,15 +16,20 @@ function CrudBtnController($scope, $element, $attrs) {
     ctrl.clicks++;
   }
 
+
   ctrl.deleteUsers = function (users) {
-    var selectedUsers = users.filter(function (user) {
-      if (user.selected) return user;
-    });
-    console.log(selectedUsers);
+    $parent.verifyUserSelected($scope.users);
+    console.log(users);
   }
 }
 
 angular.module("appModule").component("ssCrudbtn", {
   templateUrl: "view/crudBtnBar.html",
-  controller: CrudBtnController
+  controller: CrudBtnController,
+  require: {
+    ngModelCtrl: 'ngModel'
+  },
+  bindings: {
+    modelname: "="
+  }
 });
