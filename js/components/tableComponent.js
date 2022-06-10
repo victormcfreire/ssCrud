@@ -22,4 +22,7 @@ function TableController($scope, $element, $attrs, $http) {
 angular.module('appModule').component('ssTable', {
   templateUrl: 'view/table.html',
   controller: TableController,
+  bindings: {
+    filter:"="
+  }
 });

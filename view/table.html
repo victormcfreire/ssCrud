@@ -9,7 +9,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr dir-paginate="user in data | filter: $scope.search | itemsPerPage: 6 track by user.id">
+            <tr dir-paginate="user in data | filter: $ctrl.filter | itemsPerPage: 6 track by user.id">
                 <td style="text-align: center;">
                     <div>
                         <input class="form-check-input" type="checkbox" value="" ng-model="user.selected" ng-click="$ctrl.verifyUserSelected($ctrl.users)">
