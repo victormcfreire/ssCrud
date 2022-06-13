@@ -18,9 +18,12 @@ function CrudBtnController($scope, $element, $attrs) {
 
 
   ctrl.deleteUsers = function (users) {
-    $parent.verifyUserSelected($scope.users);
     console.log(users);
-  }
+    $scope.users = users.filter(function (user) {
+        if (!user.selected) return user;
+    });
+    $scope.verifyUserSelected($scope.users);
+};
 }
 
 angular.module("appModule").component("ssCrudbtn", {
@@ -30,6 +33,7 @@ angular.module("appModule").component("ssCrudbtn", {
     ngModelCtrl: 'ngModel'
   },
   bindings: {
-    modelname: "="
+    modelname: "=",
+    selectedusers: "="
   }
 });

@@ -3,7 +3,7 @@
         <h3>Novo</h3>
     </div>
     <div class="col-lg-2 form-bar" style="width: 20%; float: right;">
-        <ss-formbtn></ss-formbtn>
+        <ss-formbtn user="user"></ss-formbtn>
     </div>
 </div>
 
@@ -21,32 +21,34 @@
             <form name="userForm">
                 <tr>
                     <td>
-                        <div class="form-outline">
-                            <input class="form-control form-control-sm" name="id" type="number" ng-model="user.id" ng-required="true">
+                        <div class="form-outline" style="width: 30px;">
+                            <input style="width: 80px;" class="form-control form-control-sm" name="id" type="number"
+                                disabled ng-model="user.id" ng-required="true">
                         </div>
                     </td>
-                    <td> 
+                    <td>
                         <div class="form-outline">
-                            <input class="form-control form-control-sm" name="name" type="text" ng-model="user.name" ng-required="true">
+                            <input class="form-control form-control-sm" name="name" type="text" ng-model="user.name"
+                                ng-required="true">
                         </div>
-                        output: {{$ctrl.output()}}
-                    <td> 
+                    <td>
                         <div class="form-outline">
-                            <input class="form-control form-control-sm" name="username" type="text" ng-model="user.username" ng-required="true">
+                            <input class="form-control form-control-sm" name="username" type="text"
+                                ng-model="user.username" ng-required="true">
                         </div>
                     </td>
-                    <td> 
+                    <td>
                         <div class="form-outline">
-                            <input class="form-control form-control-sm" name="password" type="password" ng-model="user.password" ng-required="true">
-                        </div> 
+                            <input class="form-control form-control-sm" name="password" type="password"
+                                ng-model="user.password" ng-required="true">
+                        </div>
                     </td>
                 </tr>
             </form>
-            {{user}}
         </tbody>
     </table>
 </div>
 
 <div class="float-right" style="margin-right: 27px;">
-    <ss-formbtn></ss-formbtn>
+    <ss-formbtn user="user"></ss-formbtn>
 </div>

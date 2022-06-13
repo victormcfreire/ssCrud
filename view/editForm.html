@@ -21,24 +21,27 @@
             <form name="userForm">
                 <tr>
                     <td>
-                        <div class="form-outline">
-                            <input class="form-control form-control-sm" id="id" type="number" size="5" value="{{user.id}}">
-   }}                     </div>
-                    </td>
-                    <td> 
-                        <div class="form-outline">
-                            <input class="form-control form-control-sm" id="name" type="text" value="{{user.name}}">
- }}                       </div>
-                     </td>
-                    <td> 
-                        <div class="form-outline">
-                            <input class="form-control form-control-sm" id="username" type="text" value="{{user.username}}">
+                        <div class="form-outline" style="width: 30px;">
+                            <input style="width: 80px;" class="form-control form-control-sm" id="id" type="number"
+                                size="5" disabled ng-value="user.id">
                         </div>
                     </td>
-                    <td> 
+                    <td>
                         <div class="form-outline">
-                            <input class="form-control form-control-sm" id="password" type="password" value="{{user.password}}">
-                        </div> 
+                            <input class="form-control form-control-sm" id="name" type="text" ng-value="user.name">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-outline">
+                            <input class="form-control form-control-sm" id="username" type="text"
+                                ng-value="user.username">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-outline">
+                            <input class="form-control form-control-sm" id="password" type="password"
+                                ng-value="user.password">
+                        </div>
                     </td>
                 </tr>
             </form>

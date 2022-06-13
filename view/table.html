@@ -12,13 +12,13 @@
             <tr dir-paginate="user in data | filter: $ctrl.filter | itemsPerPage: 6 track by user.id">
                 <td style="text-align: center;">
                     <div>
-                        <input class="form-check-input" type="checkbox" value="" ng-model="user.selected" ng-click="$ctrl.verifyUserSelected($ctrl.users)">
+                        <input class="form-check-input" type="checkbox" ng-model="user.selected" value="" ng-click="$ctrl.verifyUserSelected(data)"><a href="#!editUser/{{user.id}}">Go</a>
                     </div> 
                 </td>
                 <td> {{ ::user.id}} </td>
                 <td> {{ ::user.name}} </td>
                 <td> {{ ::user.username}} </td>
-                <td> {{ ::user.selected}} </td>
+                <td> {{ user.selected }} </td>
             </tr>
         </tbody>
     </table>

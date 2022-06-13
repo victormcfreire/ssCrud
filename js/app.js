@@ -8,6 +8,4 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
         }).catch(function (err) {
             console.log(err);
         });
-
-        console.log(search)
     });

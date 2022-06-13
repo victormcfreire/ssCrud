@@ -3,13 +3,17 @@
         <h3>Lista</h3>
     </div>
     <div class="col-lg-10 form-bar" style="width: 50%; float: right;">
-        <ss-crudbtn ng-model="search" ></ss-crudbtn>
-        {{search}}
+        <ss-crudbtn ng-model="search" selectedusers="hasContatoSelecionado"></ss-crudbtn>
     </div>
 </div>
 <div>
     <ss-table filter="search"></ss-table>
 </div>
 <div style="float: right;">
-    <dir-pagination-controls></dir-pagination-controls>
+    <dir-pagination-controls 
+        max-size = "7"
+        direction-links = "true"
+        boundary-links = "true"
+        class="ml-pagination-numbers"
+        template-url="view/dirPagination.tpl.html"></dir-pagination-controls>
 </div>
