@@ -3,9 +3,9 @@
         <ss-searchbar ng-model="$ctrl.ngModel" ng-change="$ctrl.ngModelChange()"></ss-searchbar>
     </div>
     <div>
-        <button class="btn btn-secondary btn-sm" ng-click="$ctrl.contarClicks()">Consultar</button>
+        <button class="btn btn-secondary btn-sm">Consultar</button>
         <a class="btn btn-primary btn-sm" href="#!/newUser">Novo</a>
-        <a class="btn btn-warning btn-sm" href="#!/editUser" ng-disable="!$ctrl.selectedusers">Alterar</a>
-        <button class="btn btn-danger btn-sm" type="button" ng-disable="!$ctrl.selectedusers" ng-click="$ctrl.deleteUsers($scope.users)">Excluir</button>
+        <a class="btn btn-warning btn-sm" href="#!/editUser">Alterar</a>
+        <button class="btn btn-danger btn-sm" type="button" id="ss-delete_button" data-toggle="modal" data-target="#excluirModal">Excluir</button>
     </div>
 </div>

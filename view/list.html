@@ -3,11 +3,12 @@
         <h3>Lista</h3>
     </div>
     <div class="col-lg-10 form-bar" style="width: 50%; float: right;">
-        <ss-crudbtn ng-model="search" selectedusers="hasContatoSelecionado"></ss-crudbtn>
+        <ss-crudbtn ng-model="search"></ss-crudbtn>
+        {{hasUserSelected}}
     </div>
 </div>
 <div>
-    <ss-table filter="search"></ss-table>
+    <ss-table filter="search" on-update="$ctrl.onUpdate($ctrl.user)"></ss-table>
 </div>
 <div style="float: right;">
     <dir-pagination-controls 

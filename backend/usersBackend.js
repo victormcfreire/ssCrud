@@ -4,7 +4,8 @@ var app = express();
 
 app.use(bodyParser.json());
 
-var contatos = "../data.json"
+var users = "file:///C:/Development/workspace/angularJS/sscrud/data.json"
+users = JSON.parse(users);
 
 
 app.all('*', function(req, res, next) {
@@ -19,7 +20,7 @@ app.get('/list', function(req, res) {
 });
 
 app.get('/list/:id', function(req, res) {
-  contatos.forEach(function (user) {
+  users.forEach(function (user) {
   	if (user.id == req.params.id) {
   		res.json(user);
   		return;

@@ -6,7 +6,7 @@ angular.module("appModule").config(function($routeProvider){
         templateUrl: "view/newUser.html"
     });
     
-    $routeProvider.when("/editUser", {
+    $routeProvider.when("/editUser/:id", {
         templateUrl: "view/editForm.html",
         resolve: {
             user: function (usersAPI, $route) {
@@ -14,5 +14,5 @@ angular.module("appModule").config(function($routeProvider){
             }
         }
     });
-    $routeProvider.otherwise({ redirectTo: "/list" })
+    //$routeProvider.otherwise({ redirectTo: "/list" })
 });

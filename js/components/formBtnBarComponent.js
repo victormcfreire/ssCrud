@@ -3,17 +3,13 @@ function FormBtnComponentCtrl($scope, $element, $attrs, $location, usersAPI, $ro
 
     $scope.contato = $scope.data;
 
-    ctrl.addUser = function () {
-        console.log("adicionou no form component");
-    }
-
     ctrl.output = function () {
         return $scope.user.name;
     }
 
 
     ctrl.addUser = function (user) {
-        usersAPI.saveUser(user).then(function (response) {
+        cusersAPI.saveUser(user).then(function (response) {
             delete $scope.user;
             $scope.userForm.$setPristine();
             $scope.user.push(response.data);
