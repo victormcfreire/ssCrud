@@ -1,12 +1,15 @@
 angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.dirPagination'])
 
     .controller("appCtrl", function ($http, $scope) {
+
         $http.get('../data.json').
             then(function (res) {
                 $scope.data = res.data;
             }).catch(function (err) {
                 console.log(err);
             });
+
+        var selectedUsers = [];
 
         $scope.deleteUsers = function (users) {
             $scope.data = users.filter(function (user) {
@@ -23,4 +26,11 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
             });
         };
         
+        $scope.updateSelectedUsers = function (user){
+            if(user.selected){
+                selectedUsers.push(user);
+            }
+            console.log(selectedUsers);
+        }
+
     });

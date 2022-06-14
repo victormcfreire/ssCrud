@@ -4,7 +4,7 @@ angular.module("appModule").factory("usersAPI", function($http){
     };
 
     var _getUser = function(id) {
-        return $http.get("http://localhost:8080/index.html" + "/editUser/" + id);
+        return $http.get("http://localhost:3412" + "/list/" + id);
     };
 
     var _saveUser = function(user) {
