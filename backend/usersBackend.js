@@ -4,8 +4,12 @@ var app = express();
 
 app.use(bodyParser.json());
 
-var users = "file:///C:/Development/workspace/angularJS/sscrud/data.json"
-users = JSON.parse(users);
+var users = [
+  {id: 0001, name: "joe", username: "joe123", password: 4521},
+  {id: 0002, name: "mark", username: "mark123", password: 4481},
+  {id: 0003, name: "ellie", username: "ellie123", password: 4641},
+  {id: 0003, name: "oscar", username: "oscar123", password: 5771},
+]
 
 
 app.all('*', function(req, res, next) {

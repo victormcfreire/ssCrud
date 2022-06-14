@@ -1,5 +1,4 @@
 <div class="jumbotron">
-    {{$ctrl.verifyUserSelected(data)}}
     <table class="table table-striped table-dark table-borderless">
         <thead>
             <tr>
@@ -11,7 +10,7 @@
         </thead>
         <tbody>
             
-            <tr dir-paginate="user in data | filter: $ctrl.filter | itemsPerPage: 6 track by user.id">
+            <tr dir-paginate="user in $ctrl.receivingData | filter: $ctrl.filter | itemsPerPage: 6 track by user.id">
                 <td style="text-align: center;">
                     <div>
                         <input class="form-check-input" type="checkbox" ng-model="user.selected" value="" ng-click="$ctrl.updateSelected(user)"><a href="#!editUser/{{user.id}}">Go</a>

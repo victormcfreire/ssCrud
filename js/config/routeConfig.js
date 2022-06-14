@@ -3,11 +3,11 @@ angular.module("appModule").config(function($routeProvider){
         templateUrl: "view/list.html"
     });
     $routeProvider.when("/newUser", {
-        templateUrl: "view/newUser.html"
+        template: "<ss-newuser data='data'></ss-newuser>"
     });
     
-    $routeProvider.when("/editUser/:id", {
-        templateUrl: "view/editForm.html",
+    $routeProvider.when("/editUser", {
+        template: "<ss-editform data='data'></ss-editform>",
         resolve: {
             user: function (usersAPI, $route) {
                 return usersAPI.getUsers($route.current.params.id);

@@ -14,6 +14,7 @@ angular.module("appModule").component("ssCrudbtn", {
   },
   bindings: {
     modelname: "=",
-    selectedusers: "="
+    selectedusers: "=",
+    receivingData:"=data"
   }
 });

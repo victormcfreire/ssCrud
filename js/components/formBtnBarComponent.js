@@ -1,19 +1,18 @@
 function FormBtnComponentCtrl($scope, $element, $attrs, $location, usersAPI, $routeParams) {
     var ctrl = this;
 
-    $scope.contato = $scope.data;
-
     ctrl.output = function () {
         return $scope.user.name;
     }
 
-
     ctrl.addUser = function (user) {
-        cusersAPI.saveUser(user).then(function (response) {
-            delete $scope.user;
-            $scope.userForm.$setPristine();
-            $scope.user.push(response.data);
+        console.log(ctrl.scopeuser);
+        
+        usersAPI.saveUser(user).then(function (response) {
+            //$scope.userForm.$setPristine();
+            $scope.data.push(response.data);
             console.log(response.data);
+            delete $scope.user;
             $location.path("/list");
         });
     }
@@ -24,6 +23,7 @@ angular.module("appModule").component("ssFormbtn", {
     templateUrl: "view/formBtnBar.html",
     controller: FormBtnComponentCtrl,
     bindings: {
-        user: "="
+        scopeuser: "=",
+        receivingData: "=data"
     }
 });

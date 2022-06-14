@@ -4,5 +4,8 @@ function EditFormCtrl($scope, $element, $attrs, $routeParams){
 
 angular.module("appModule").component("ssEditform", {
     templateUrl: "view/editForm.html",
-    controller: EditFormCtrl
+    controller: EditFormCtrl,
+    bindings:{
+        receivingData: "=data"
+    }
 });
