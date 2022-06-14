@@ -23,7 +23,7 @@
                     <td>
                         <div class="form-outline" style="width: 30px;">
                             <input style="width: 80px;" class="form-control form-control-sm" name="id" type="number"
-                                disabled ng-model="user.id" ng-required="true">
+                                readonly ng-init="user.id = newId()" ng-model="user.id" ng-required="true">
                         </div>
                     </td>
                     <td>
@@ -48,7 +48,6 @@
         </tbody>
     </table>
 </div>
-{{user}}
 <div class="float-right" style="margin-right: 15px;">
-    <ss-formbtn scopeuser="user"></ss-formbtn>
+    <ss-formbtn scopeuser="user" data="$ctrl.receivingData"></ss-formbtn>
 </div>

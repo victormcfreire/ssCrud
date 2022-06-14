@@ -6,7 +6,7 @@ angular.module("appModule").config(function($routeProvider){
         template: "<ss-newuser data='data'></ss-newuser>"
     });
     
-    $routeProvider.when("/editUser", {
+    $routeProvider.when("/editUser/:id", {
         template: "<ss-editform data='data'></ss-editform>",
         resolve: {
             user: function (usersAPI, $route) {
