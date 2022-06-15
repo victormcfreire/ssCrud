@@ -12,8 +12,10 @@ function FormBtnComponentCtrl($scope, $element, $attrs, $location, usersAPI, $ro
         else if (ctrl.operation === "edit") {
             for (i in ctrl.receivingData) {
                 if (ctrl.receivingData[i].id == id) {
-                    ctrl.receivingData[i] = ctrl.scopeuser;
-                    $location.path("/list");
+                    usersAPI.editUser(ctrl.receivingData[i].id).then(function (response) {
+                        ctrl.receivingData[i] = ctrl.scopeuser;
+                        $location.path("/list");
+                    })
                 }
             }
         }
