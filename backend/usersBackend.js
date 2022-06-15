@@ -9,73 +9,85 @@ var users = [
     "id": 1144,
     "username": "https://api.genderize.io",
     "name": "Abc123",
-    "password": "da4b078088c6b09a68a7350369ad4fad"
+    "password": "da4b078088c6b09a68a7350369ad4fad",
+    "selected":"false"
   },
   {
     "id": 1174,
     "username": "https://web-api-test1.herokuapp.com",
     "name": "dftyuu",
-    "password": "da4b078088c6b09a68a7350369ad4fad"
+    "password": "da4b078088c6b09a68a7350369ad4fad",
+    "selected":"false"
   },
   {
     "id": 1184,
     "username": "Siva",
     "name": "dftyuu",
-    "password": "da4b078088c6b09a68a7350369ad4fad"
+    "password": "da4b078088c6b09a68a7350369ad4fad",
+    "selected":"false"
   },
   {
     "id": 1194,
     "username": "Siva",
     "name": "dftyuu",
-    "password": "da4b078088c6b09a68a7350369ad4fad"
+    "password": "da4b078088c6b09a68a7350369ad4fad",
+    "selected":"false"
   },
   {
     "id": 1204,
     "username": "Siva",
     "name": "dftyuu",
-    "password": "da4b078088c6b09a68a7350369ad4fad"
+    "password": "da4b078088c6b09a68a7350369ad4fad",
+    "selected":"false"
   },
   {
     "id": 1214,
     "username": "Siva",
     "name": "dftyuu",
-    "password": "da4b078088c6b09a68a7350369ad4fad"
+    "password": "da4b078088c6b09a68a7350369ad4fad",
+    "selected":"false"
   },
   {
     "id": 1234,
     "username": "Siva",
     "name": "dftyuu",
-    "password": "da4b078088c6b09a68a7350369ad4fad"
+    "password": "da4b078088c6b09a68a7350369ad4fad",
+    "selected":"false"
   },
   {
     "id": 1244,
     "username": "Siva",
     "name": "dftyuu",
-    "password": "da4b078088c6b09a68a7350369ad4fad"
+    "password": "da4b078088c6b09a68a7350369ad4fad",
+    "selected":"false"
   },
   {
     "id": 1254,
     "username": "Siva",
     "name": "dftyuu",
-    "password": "da4b078088c6b09a68a7350369ad4fad"
+    "password": "da4b078088c6b09a68a7350369ad4fad",
+    "selected": "false"
   },
   {
     "id": 1274,
     "username": "Siva",
     "name": "dftyuu",
-    "password": "da4b078088c6b09a68a7350369ad4fad"
+    "password": "da4b078088c6b09a68a7350369ad4fad",
+    "selected": "false"
   },
   {
     "id": 1294,
     "username": "Siva",
     "name": "dftyuu",
-    "password": "da4b078088c6b09a68a7350369ad4fad"
+    "password": "da4b078088c6b09a68a7350369ad4fad",
+    "selected": "false"
   },
   {
     "id": 1304,
     "username": "Siva",
     "name": "dftyuu",
-    "password": "da4b078088c6b09a68a7350369ad4fad"
+    "password": "da4b078088c6b09a68a7350369ad4fad",
+    "selected": "false"
   },
   {
     "id": 1314,

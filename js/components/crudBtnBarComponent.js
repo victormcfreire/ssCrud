@@ -4,6 +4,13 @@ function CrudBtnController($scope, $element, $attrs) {
   ctrl.ngModelChange = function () {
     this.ngModelCtrl.$setViewValue(this.ngModel);
   }
+
+  ctrl.getSelectedUsers = function (){
+    for (let i = 0; i < ctrl.selectedusers.result.length; i++) {
+      const element = ctrl.selectedusers.result[i];
+      return element.id;
+    }
+  }
 }
 
 angular.module("appModule").component("ssCrudbtn", {
@@ -14,7 +21,7 @@ angular.module("appModule").component("ssCrudbtn", {
   },
   bindings: {
     modelname: "=",
-    selecteduser: "=",
+    selectedusers: "<",
     receivingData:"=data"
   }
 });

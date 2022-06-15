@@ -1,7 +1,5 @@
 function TableController($scope, $element, $attrs, $http) {
   var ctrl = this;
-  
-
 }
 
 angular.module('appModule').component('ssTable', {
@@ -9,7 +7,6 @@ angular.module('appModule').component('ssTable', {
   controller: TableController,
   bindings: {
     filter: "=",
-    onUpdate: "&",
     receivingData: "=data"
   },
 });

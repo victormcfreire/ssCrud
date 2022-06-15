@@ -9,8 +9,23 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
                 console.log(err);
             });
 
-        var selectedUsers = [];
 
+        $scope.selectedUsers = {};
+
+        $scope.selectUser = function (user) {
+            console.log(user)
+        }
+
+        $scope.result = function () {
+            $scope.selectedUsers.result = []
+            angular.forEach($scope.data, function (value) {
+                if (value.selected) {
+                    $scope.selectedUsers.result.push(value);
+                    return $scope.selectedUsers.result;
+                }
+            })
+        }
+        
         $scope.deleteUsers = function (users) {
             $scope.data = users.filter(function (user) {
                 if (!user.selected) {
@@ -25,12 +40,4 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
                 return user.selected;
             });
         };
-        
-        $scope.updateSelectedUsers = function (user){
-            if(user.selected){
-                selectedUsers.push(user);
-            }
-            console.log(selectedUsers);
-        }
-
     });

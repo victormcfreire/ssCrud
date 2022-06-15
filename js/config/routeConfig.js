@@ -7,12 +7,12 @@ angular.module("appModule").config(function($routeProvider){
     });
     
     $routeProvider.when("/editUser/:id", {
-        template: "<ss-editform data='data' user='$resolve.user.data'></ss-editform>",
+        template: "<ss-editform data='data' users='selectedUsers'></ss-editform>",
         resolve: {
             user: function (usersAPI, $route) {
                 return usersAPI.getUser($route.current.params.id);
             },
         }
     });
-    //$routeProvider.otherwise({ redirectTo: "/list" })
+    $routeProvider.otherwise({ redirectTo: "/list" })
 });
