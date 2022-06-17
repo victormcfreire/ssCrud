@@ -1,20 +1,15 @@
 angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.dirPagination'])
 
-    .controller("appCtrl", function ($http, $scope) {
+    .controller("appCtrl", function ($http, $scope, usersAPI, $location) {
 
-        $http.get('../data.json').
+        $http.get('http://localhost:3000/users/all').
             then(function (res) {
                 $scope.data = res.data;
             }).catch(function (err) {
                 console.log(err);
             });
 
-
         $scope.selectedUsers = {};
-
-        $scope.selectUser = function (user) {
-            console.log(user)
-        }
 
         $scope.result = function () {
             $scope.selectedUsers.result = []
@@ -25,11 +20,14 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
                 }
             })
         }
-        
+
         $scope.deleteUsers = function (users) {
             $scope.data = users.filter(function (user) {
-                if (!user.selected) {
-                    return user;
+                if (user.selected) {
+                    console.log(req.params.id)
+                    usersAPI.deleteUsers(user.id).then(function (response){
+                        $location.path("/list");
+                    })
                 }
             });
             $scope.verifyUserSelected($scope.data);
@@ -41,3 +39,4 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
             });
         };
     });
+    

@@ -1,15 +1,14 @@
 function FormBtnComponentCtrl($scope, $element, $attrs, $location, usersAPI, $routeParams) {
     var ctrl = this;
     ctrl.saveUser = function (user, id) {
-        if (ctrl.operation === "save") {
+        if (ctrl.operation == "save") {
             usersAPI.saveUser(user).then(function (response) {
                 //$scope.userForm.$setPristine();
-                ctrl.receivingData.push(ctrl.scopeuser);
                 delete $scope.user;
                 $location.path("/list");
             });
         }
-        else if (ctrl.operation === "edit") {
+        else if (ctrl.operation == "edit") {
             for (i in ctrl.receivingData) {
                 if (ctrl.receivingData[i].id == id) {
                     usersAPI.editUser(ctrl.receivingData[i].id).then(function (response) {
