@@ -9,7 +9,7 @@ angular.module("appModule").factory("usersAPI", function($http){
 
     var _editUser = function(id) {
         return $http({
-            method: 'OPTIONS',
+            method: 'PUT',
             url: 'http://localhost:3000/users/' + id,
             headers:{
                 'Access-Control-Allow-Origin': '*',

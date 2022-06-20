@@ -2,7 +2,7 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
 
     .controller("appCtrl", function ($http, $scope, usersAPI, $location) {
 
-        $http.get('http://localhost:3000/users/all').
+        usersAPI.getUsers().
             then(function (res) {
                 $scope.data = res.data;
             }).catch(function (err) {
