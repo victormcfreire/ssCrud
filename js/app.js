@@ -24,7 +24,6 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
         $scope.deleteUsers = function (users) {
             $scope.data = users.filter(function (user) {
                 if (user.selected) {
-                    console.log(req.params.id)
                     usersAPI.deleteUsers(user.id).then(function (response){
                         $location.path("/list");
                     })
