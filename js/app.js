@@ -2,12 +2,14 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
 
     .controller("appCtrl", function ($http, $scope, usersAPI, $location) {
 
-        usersAPI.getUsers().
+        $scope.loadUsers = function(){
+            usersAPI.getUsers().
             then(function (res) {
                 $scope.data = res.data;
             }).catch(function (err) {
                 console.log(err);
             });
+        }
 
         $scope.selectedUsers = {};
 
@@ -25,6 +27,7 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
             $scope.data = users.filter(function (user) {
                 if (user.selected) {
                     usersAPI.deleteUsers(user.id).then(function (response){
+                        $scope.loadUsers();
                         $location.path("/list");
                     })
                 }
@@ -37,5 +40,7 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
                 return user.selected;
             });
         };
+
+        $scope.loadUsers();
     });
     

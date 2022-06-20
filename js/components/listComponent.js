@@ -1,4 +1,4 @@
-function ListComponentCtrl($scope, $element, $attrs) {
+function ListComponentCtrl($scope, $element, $attrs, $resource) {
     var ctrl = this;
 
 }

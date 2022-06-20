@@ -8,25 +8,11 @@ angular.module("appModule").factory("usersAPI", function($http){
     };
 
     var _editUser = function(id) {
-        return $http({
-            method: 'PUT',
-            url: 'http://localhost:3000/users/' + id,
-            headers:{
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'PUT, GET, DELETE, POST, PATCH, OPTIONS'
-            }
-        });
+        return $http.put("http://localhost:3000/users/"+ id)
     };
 
     var _deleteUsers = function(id) {
-        return $http({
-            method: 'DELETE',
-            url: 'http://localhost:3000/users/' + id,
-            headers:{
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'PUT, GET, DELETE, POST, PATCH, OPTIONS'
-            }
-        });
+        return $http.delete("http://localhost:3000/users/" + id)
     };
 
     var _saveUser = function(user) {

@@ -3,7 +3,6 @@ function FormBtnComponentCtrl($scope, $element, $attrs, $location, usersAPI, $ro
     ctrl.saveUser = function (user, id) {
         if (ctrl.operation == "save") {
             usersAPI.saveUser(user).then(function (response) {
-                //$scope.userForm.$setPristine();
                 delete $scope.user;
                 $location.path("/list");
             });
