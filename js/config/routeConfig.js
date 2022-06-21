@@ -14,5 +14,14 @@ angular.module("appModule").config(function($routeProvider){
             },
         }
     });
+
+    $routeProvider.when("/deleteUser/:id", {
+        templateUrl:"view/list.html",
+        resolve: {
+            user: function (usersAPI, $route) {
+                return usersAPI.getUser($route.current.params.id);
+            },
+        }
+    })
     $routeProvider.otherwise({ redirectTo: "/list" })
 });

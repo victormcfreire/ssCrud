@@ -3,7 +3,7 @@ function NewUserCtrl($scope, $element, $attrs) {
     
     $scope.newId = function (){
         var lastElement = ctrl.receivingData.at(-1);
-        return lastElement.id + 1
+        return lastElement.id + 10
     }
 
 }
