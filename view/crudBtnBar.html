@@ -1,7 +1,8 @@
 <div class="row" style="float: right;">
     <div class="form-outline" style="margin-right: 5px;">
-        <ss-searchbar ng-model="$ctrl.ngModel" ng-change="$ctrl.ngModelChange()"></ss-searchbar>
-        
+        <form name="searchForm">
+            <ss-searchbar ng-model="$ctrl.ngModel" ng-change="$ctrl.ngModelChange()"></ss-searchbar>
+        </form>
     </div>
     <div>
         <button class="btn btn-secondary btn-sm">Consultar</button>

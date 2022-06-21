@@ -1,1 +1,3 @@
-<input class="form-control form-control-sm" type="text" placeholder="Pesquisar" autofocus ng-model="$ctrl.ngModel" ng-change="$ctrl.ngModelChange()">
+<input class="form-control form-control-sm" type="text" placeholder="Pesquisar" autofocus
+    ng-model-options="{updateOn:'ng-keyup', debounce: 500}" ng-model="filter"
+    ng-keyup="$event.keyCode == 13" ng-change="$ctrl.ngModelChange()">

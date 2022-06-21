@@ -1,12 +1,8 @@
 function SearchBarCtrl($scope, $element, $attrs){
     var ctrl = this;
 
-    ctrl.searchInput = function(){
-        return $scope.searchInput;
-    }
-
     ctrl.ngModelChange = function(){
-        this.ngModelCtrl.$setViewValue(this.ngModel);
+        this.ngModelCtrl.$setViewValue($scope.filter);
     }
 }
 
