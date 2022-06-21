@@ -1,4 +1,5 @@
 <div class="row" style="float: right;">
+    tooManyUsers? {{$ctrl.tooManyUsers}}
     <div class="form-outline" style="margin-right: 5px;">
         <form name="searchForm">
             <ss-searchbar ng-model="$ctrl.ngModel" ng-change="$ctrl.ngModelChange()"></ss-searchbar>
@@ -7,7 +8,7 @@
     <div>
         <button class="btn btn-secondary btn-sm">Consultar</button>
         <a class="btn btn-primary btn-sm" href="#!/newUser">Novo</a>
-        <a class="btn btn-warning btn-sm" href="#!/editUser/{{$ctrl.getSelectedUsers()}}">Alterar</a>
-        <a class="btn btn-danger btn-sm" type="button" id="ss-delete_button" data-toggle="modal" data-target="#excluirModal" href="#!/deleteUser/{{$ctrl.getSelectedUsers()}}">Excluir</a>
+        <a class="btn btn-warning btn-sm" style="color: rgb(39, 39, 39);" href="#!/editUser/{{$ctrl.getSelectedUsers()}}">Alterar</a>
+        <a class="btn btn-danger btn-sm" style="color: #fff;" type="button" id="ss-delete_button" data-toggle="modal" data-target="#excluirModal">Excluir</a>
     </div>
 </div>

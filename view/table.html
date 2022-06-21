@@ -11,9 +11,9 @@
         <tbody>
             <tr dir-paginate="user in $ctrl.receivingData | filter: $ctrl.filter | itemsPerPage: 6 track by user.id">
                 <td style="text-align: center;">
-                    <form name="checkForm">
+                    <form id="checkForm">
                         <div>
-                            <input class="form-check-input" type="checkbox" ng-model="user.selected" value="">
+                            <input class="form-check-input" type="checkbox" ng-model="user.selected">
                         </div> 
                     </form>
                 </td>

@@ -2,15 +2,17 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
 
     .controller("appCtrl", function ($http, $scope, usersAPI, $location) {
 
-        $scope.loadUsers = function(){
+        $scope.loadUsers = function () {
             usersAPI.getUsers().
-            then(function (res) {
-                $scope.data = res.data;
-            }).catch(function (err) {
-                console.log(err);
-            });
+                then(function (res) {
+                    $scope.data = res.data;
+                }).catch(function (err) {
+                    console.log(err);
+                });
         }
 
+        $scope.tooManyUsers;
+        
         $scope.selectedUsers = {};
 
         $scope.result = function () {
@@ -23,16 +25,19 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
             })
         }
 
-        $scope.deleteUsers = function (users) {
-            $scope.data = users.filter(function (user) {
-                if (user.selected) {
-                    usersAPI.deleteUsers(user.id).then(function (response){
+        $scope.deleteUsers = function () {
+            if ($scope.selectedUsers.result.length == 0) {
+                $scope.noUserError = true;
+            }
+            else{
+                for (let i = 0; i < $scope.selectedUsers.result.length; i++) {
+                    const element = $scope.selectedUsers.result[i];
+                    usersAPI.deleteUsers(element.id).then(function (response) {
                         $scope.loadUsers();
                         $location.path("/list");
                     })
-                }
-            });
-            $scope.verifyUserSelected($scope.data);
+                };
+            }
         };
 
         $scope.verifyUserSelected = function (users) {
@@ -41,6 +46,10 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
             });
         };
 
+        $scope.backToList = function () {
+            $('#excluirModal').modal('toggle');
+            $location.path("/list");
+        }
+
         $scope.loadUsers();
     });
-    

@@ -2,6 +2,10 @@ body{
     padding: 15px;
 }
 
+a{
+    color: #fff;
+}
+
 td{
     max-width: fit-content;
 }

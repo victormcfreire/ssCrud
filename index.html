@@ -26,22 +26,39 @@
     <script src="js/components/editFormComponent.js"></script>
     <script src="js/controllers/ssCrudCtrl.js"></script>
     <script src="js/services/usersAPI.js"></script>
-    <!-- 
-    -->
+
     <title>ssCRUD</title>
 </head>
 
 <body>
     {{result()}}
-    <div ng-view></div>
     
+    <div ng-show="noUserError" class="alert alert-danger">
+        Nenhum usuário selecionado
+        <div style="float:right;">
+            <button  type="button" class="close" ng-click="noUserError = false">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <div ng-show="tooManyUsers" class="alert alert-warning">
+        Selecione apenas um usuário
+        <div style="float:right;">
+            <button  type="button" class="close" ng-click="tooManyUsers = false">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+
+    <div ng-view></div>
+
     <div class="modal fade" id="excluirModal" tabindex="-1" role="dialog" aria-labelledby="excluirModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="alertModalLabel">Alerta</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" ng-click="backToList()" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -49,9 +66,9 @@
                     <p>Deseja realmente excluir esse(s) registro(s)?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal"
-                        ng-click="deleteUsers(data)">Confirmar</button>
+                    <button type="button" class="btn btn-secondary" ng-click="backToList()">Cancelar</button>
+                    <a type="button" class="btn btn-danger"  id="confirmDeleteBtn" data-dismiss="modal"
+                        href="#!/deleteUser/{{$ctrl.getSelectedUsers()}}" ng-click=" deleteUsers()">Confirmar</a>
                 </div>
             </div>
         </div>

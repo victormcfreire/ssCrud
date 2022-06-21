@@ -6,9 +6,12 @@ function CrudBtnController($scope, $element, $attrs) {
   }
 
   ctrl.getSelectedUsers = function (){
-    for (let i = 0; i < ctrl.selectedusers.result.length; i++) {
-      const element = ctrl.selectedusers.result[i];
-      return element.id;
+    if(ctrl.selectedusers.result.length == 1){
+      ctrl.tooManyUsers = false;
+      return ctrl.selectedusers.result[0].id;
+    }
+    else if(ctrl.selectedusers.result.length > 1){
+      ctrl.tooManyUsers = true;
     }
   }
 }
