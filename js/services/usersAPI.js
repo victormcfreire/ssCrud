@@ -7,8 +7,16 @@ angular.module("appModule").factory("usersAPI", function($http){
         return $http.get("http://localhost:3000/users/" + id);
     };
 
-    var _editUser = function(id) {
-        return $http.put("http://localhost:3000/users/"+ id)
+    var _editUser = function(user, id) {
+        return $http({
+            method: 'PUT',
+            url: 'http://localhost:3000/users/'+ id,
+            data:{
+                name: user.name,
+                username: user.username,
+                password: user.password
+            }
+        })
     };
 
     var _deleteUsers = function(id) {

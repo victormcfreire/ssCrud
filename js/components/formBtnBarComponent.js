@@ -1,4 +1,4 @@
-function FormBtnComponentCtrl($scope, $element, $attrs, $location, usersAPI, $routeParams) {
+function FormBtnComponentCtrl($scope, $element, $attrs, $location, usersAPI, $http) {
     var ctrl = this;
     ctrl.saveUser = function (user, id) {
         if (ctrl.operation == "save") {
@@ -10,8 +10,8 @@ function FormBtnComponentCtrl($scope, $element, $attrs, $location, usersAPI, $ro
         else if (ctrl.operation == "edit") {
             for (i in ctrl.receivingData) {
                 if (ctrl.receivingData[i].id == id) {
-                    usersAPI.editUser(ctrl.receivingData[i].id).then(function (response) {
-                        ctrl.receivingData[i] = ctrl.scopeuser;
+                    console.log($http.data);
+                    usersAPI.editUser(user, ctrl.receivingData[i].id).then(function (response) {
                         $location.path("/list");
                     })
                 }
