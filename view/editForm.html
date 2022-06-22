@@ -9,7 +9,6 @@
 
 <div class="jumbotron">
     <table class="table table-striped table-dark table-borderless">
-        {{$ctrl.showUsers()}}
         <thead>
             <tr>
                 <th>Id</th>
@@ -29,7 +28,8 @@
                     </td>
                     <td>
                         <div class="form-outline">
-                            <input class="form-control form-control-sm" id="name" type="text" ng-init="user.name" ng-model="user.name" ng-required>
+                            <input class="form-control form-control-sm" id="name" type="text" ng-init="user.name"
+                                ng-model="user.name" ng-required>
                         </div>
                     </td>
                     <td>

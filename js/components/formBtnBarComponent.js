@@ -1,23 +1,17 @@
-function FormBtnComponentCtrl($scope, $element, $attrs, $location, usersAPI, $http) {
+function FormBtnComponentCtrl($scope, $element, $attrs, $location, usersAPI) {
     var ctrl = this;
-    
-    
-    ctrl.saveUser = function (user, id) {
+
+
+    ctrl.saveUser = function (user) {
         if (ctrl.operation == "save") {
             usersAPI.saveUser(user).then(function (response) {
-                delete $scope.user;
                 $location.path("/list");
             });
         }
         else if (ctrl.operation == "edit") {
-            for (i in ctrl.receivingData) {
-                if (ctrl.receivingData[i].id == id) {
-                    console.log($http.data);
-                    usersAPI.editUser(user, ctrl.receivingData[i].id).then(function (response) {
-                        $location.path("/list");
-                    })
-                }
-            }
+            usersAPI.editUser(user, user.id).then(function (response) {
+                $location.path("/list");
+            });
         }
     }
 }

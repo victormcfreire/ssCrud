@@ -6,7 +6,7 @@ angular.module('appModule').component('ssTable', {
   templateUrl: 'view/table.html',
   controller: TableController,
   bindings: {
-    filter: "=",
-    receivingData: "=data"
+    filter: "<",
+    receivingData: "<data"
   },
 });

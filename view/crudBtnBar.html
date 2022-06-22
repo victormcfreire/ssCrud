@@ -4,12 +4,11 @@
             <ss-searchbar ng-model="$ctrl.ngModel" ng-change="$ctrl.ngModelChange()"></ss-searchbar>
         </form>
     </div>
-    
     <div>
         <button class="btn btn-secondary btn-sm">Consultar</button>
         <a class="btn btn-primary btn-sm" href="#!/newUser">Novo</a>
-        <a class="btn btn-warning btn-sm" style="color: rgb(39, 39, 39);" type="button" ng-click="$ctrl.checkUsers()"
-            >Alterar</a>
+        <a class="btn btn-warning btn-sm" style="color: rgb(39, 39, 39);" type="button"
+            ng-click="$ctrl.checkUsers($ctrl.selectedusers.result)">Alterar</a>
         <a class="btn btn-danger btn-sm" style="color: #fff;" type="button" id="ss-delete_button" data-toggle="modal"
             data-target="#excluirModal">Excluir</a>
     </div>

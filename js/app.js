@@ -1,6 +1,6 @@
-angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.dirPagination'])
+angular.module("appModule", ['ngRoute', 'angularUtils.directives.dirPagination'])
 
-    .controller("appCtrl", function ($http, $scope, usersAPI, $location) {
+    .controller("appCtrl", function ($scope, usersAPI, $location) {
 
         $scope.loadUsers = function () {
             usersAPI.getUsers().
@@ -11,12 +11,14 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
                 });
         }
 
-        $scope.tooManyUsers;
+        $scope.tooManyUsers = false;
         
         $scope.selectedUsers = {};
-        $scope.result = function () {
-            $scope.selectedUsers.result = []
-            angular.forEach($scope.data, function (value) {
+        
+        $scope.result = function (data) {
+            $scope.selectedUsers.result = [];
+
+            angular.forEach(data, function (value) {
                 if (value.selected) {
                     $scope.selectedUsers.result.push(value);
                     return $scope.selectedUsers.result;
@@ -24,13 +26,13 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
             })
         }
 
-        $scope.deleteUsers = function () {
-            if ($scope.selectedUsers.result.length == 0) {
+        $scope.deleteUsers = function (users) {
+            if (users.length == 0) {
                 $scope.noUserError = true;
             }
             else{
-                for (let i = 0; i < $scope.selectedUsers.result.length; i++) {
-                    const element = $scope.selectedUsers.result[i];
+                for (let i = 0; i < users.length; i++) {
+                    const element = users[i];
                     usersAPI.deleteUsers(element.id).then(function (response) {
                         $scope.loadUsers();
                         $location.path("/list");

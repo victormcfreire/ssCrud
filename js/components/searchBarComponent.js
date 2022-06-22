@@ -13,6 +13,6 @@ angular.module("appModule").component("ssSearchbar", {
         ngModelCtrl:'ngModel'
     },
     bindings: {
-        modelname: "="
+        modelname: "<"
     }
 });

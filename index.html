@@ -12,31 +12,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="lib/angular-route.js"></script>
     <script src="lib/dirPagination.js"></script>
-    <script src="data.json"></script>
     <script src="js/app.js"></script>
-    <script src="js/modules/listModule.js"></script>
     <script src="js/components/listComponent.js"></script>
     <script src="js/config/routeConfig.js"></script>
     <script src="js/components/tableComponent.js"></script>
     <script src="js/components/crudBtnBarComponent.js"></script>
     <script src="js/components/searchBarComponent.js"></script>
-    <script src="js/components/paginationComponent.js"></script>
     <script src="js/components/formBtnBarComponent.js"></script>
     <script src="js/components/newUserComponent.js"></script>
     <script src="js/components/editFormComponent.js"></script>
-    <script src="js/controllers/ssCrudCtrl.js"></script>
     <script src="js/services/usersAPI.js"></script>
 
     <title>ssCRUD</title>
 </head>
 
 <body>
-    {{result()}}
-    
+    {{result(data)}}
     <div ng-show="noUserError" class="alert alert-danger">
         Nenhum usuário selecionado
         <div style="float:right;">
-            <button  type="button" class="close" ng-click="noUserError = false">
+            <button type="button" class="close" ng-click="noUserError = false">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
@@ -59,8 +54,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" ng-click="backToList()">Cancelar</button>
-                    <a type="button" class="btn btn-danger" style="color: #fff;"  id="confirmDeleteBtn" data-dismiss="modal"
-                        ng-click=" deleteUsers()">Confirmar</a>
+                    <a type="button" class="btn btn-danger" style="color: #fff;" id="confirmDeleteBtn"
+                        data-dismiss="modal" ng-click=" deleteUsers(selectedUsers.result)">Confirmar</a>
                 </div>
             </div>
         </div>

@@ -16,11 +16,11 @@ angular.module("appModule").factory("usersAPI", function($http){
                 username: user.username,
                 password: user.password
             }
-        })
+        });
     };
 
     var _deleteUsers = function(id) {
-        return $http.delete("http://localhost:3000/users/" + id)
+        return $http.delete("http://localhost:3000/users/" + id);
     };
 
     var _saveUser = function(user) {
