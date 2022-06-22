@@ -1,17 +1,17 @@
-function CrudBtnController($scope, $element, $attrs) {
+function CrudBtnController($scope, $element, $attrs, $location) {
   var ctrl = this;
 
   ctrl.ngModelChange = function () {
     this.ngModelCtrl.$setViewValue(this.ngModel);
   }
 
-  ctrl.getSelectedUsers = function (){
+  ctrl.checkUsers = function(){
     if(ctrl.selectedusers.result.length == 1){
-      ctrl.tooManyUsers = false;
-      return ctrl.selectedusers.result[0].id;
+      ctrl.toomanyusers = false;
+      $location.path('/editUser/' + ctrl.selectedusers.result[0].id)
     }
     else if(ctrl.selectedusers.result.length > 1){
-      ctrl.tooManyUsers = true;
+      ctrl.toomanyusers = true;
     }
   }
 }
@@ -25,6 +25,7 @@ angular.module("appModule").component("ssCrudbtn", {
   bindings: {
     modelname: "=",
     selectedusers: "<",
-    receivingData:"=data"
+    receivingData:"=data",
+    toomanyusers: "="
   }
 });

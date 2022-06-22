@@ -41,14 +41,6 @@
             </button>
         </div>
     </div>
-    <div ng-show="tooManyUsers" class="alert alert-warning">
-        Selecione apenas um usuário
-        <div style="float:right;">
-            <button  type="button" class="close" ng-click="tooManyUsers = false">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    </div>
 
     <div ng-view></div>
 
@@ -67,8 +59,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" ng-click="backToList()">Cancelar</button>
-                    <a type="button" class="btn btn-danger"  id="confirmDeleteBtn" data-dismiss="modal"
-                        href="#!/deleteUser/{{$ctrl.getSelectedUsers()}}" ng-click=" deleteUsers()">Confirmar</a>
+                    <a type="button" class="btn btn-danger" style="color: #fff;"  id="confirmDeleteBtn" data-dismiss="modal"
+                        ng-click=" deleteUsers()">Confirmar</a>
                 </div>
             </div>
         </div>

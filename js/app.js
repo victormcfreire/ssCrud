@@ -14,7 +14,6 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
         $scope.tooManyUsers;
         
         $scope.selectedUsers = {};
-
         $scope.result = function () {
             $scope.selectedUsers.result = []
             angular.forEach($scope.data, function (value) {
@@ -40,16 +39,10 @@ angular.module("appModule", ['ngRoute', 'listModule', 'angularUtils.directives.d
             }
         };
 
-        $scope.verifyUserSelected = function (users) {
-            $scope.hasUserSelected = users.some(function (user) {
-                return user.selected;
-            });
-        };
-
         $scope.backToList = function () {
             $('#excluirModal').modal('toggle');
             $location.path("/list");
         }
-
+        
         $scope.loadUsers();
     });

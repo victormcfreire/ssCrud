@@ -1,5 +1,7 @@
 function FormBtnComponentCtrl($scope, $element, $attrs, $location, usersAPI, $http) {
     var ctrl = this;
+    
+    
     ctrl.saveUser = function (user, id) {
         if (ctrl.operation == "save") {
             usersAPI.saveUser(user).then(function (response) {
