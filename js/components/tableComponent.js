@@ -7,6 +7,7 @@ angular.module('appModule').component('ssTable', {
   controller: TableController,
   bindings: {
     filter: "<",
-    receivingData: "<data"
+    receivingData: "<data",
+    checkclicked:"&"
   },
 });

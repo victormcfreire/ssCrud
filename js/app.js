@@ -17,7 +17,6 @@ angular.module("appModule", ['ngRoute', 'angularUtils.directives.dirPagination']
         
         $scope.result = function (data) {
             $scope.selectedUsers.result = [];
-
             angular.forEach(data, function (value) {
                 if (value.selected) {
                     $scope.selectedUsers.result.push(value);
@@ -46,5 +45,6 @@ angular.module("appModule", ['ngRoute', 'angularUtils.directives.dirPagination']
             $location.path("/list");
         }
         
+        $scope.result();
         $scope.loadUsers();
     });
