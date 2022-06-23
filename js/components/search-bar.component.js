@@ -6,7 +6,7 @@ function SearchBarCtrl($scope, $element, $attrs){
     }
 }
 
-angular.module("appModule").component("ssSearchbar", {
+angular.module("searchBarModule").component("ssSearchBar", {
     templateUrl: "view/searchBar.html",
     controller: SearchBarCtrl,
     require:{

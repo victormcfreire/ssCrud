@@ -1,5 +1,7 @@
-angular.module("appModule").factory("usersAPI", function($http){
-    var _getUsers = function() {
+angular.module("appModule")
+    .factory("usersAPI", function($http){
+    
+        var _getUsers = function() {
         return $http.get("http://localhost:3000/users/all");
     };
 

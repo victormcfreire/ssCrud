@@ -1,4 +1,4 @@
-function EditFormCtrl($scope, $element, $attrs, $routeParams) {
+function EditFormCtrl($scope, $element, $attrs) {
     var ctrl = this;
 
     ctrl.$onInit = function(){
@@ -9,7 +9,7 @@ function EditFormCtrl($scope, $element, $attrs, $routeParams) {
     }
 }
 
-angular.module("appModule").component("ssEditform", {
+angular.module("editFormModule").component("ssEditform", {
     templateUrl: "view/editForm.html",
     controller: EditFormCtrl,
     bindings: {

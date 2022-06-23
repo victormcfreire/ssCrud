@@ -16,7 +16,7 @@ function CrudBtnController($scope, $element, $attrs, $location) {
   }
 }
 
-angular.module("appModule").component("ssCrudbtn", {
+angular.module("crudBtnBarModule").component("ssCrudBtn", {
   templateUrl: "view/crudBtnBar.html",
   controller: CrudBtnController,
   require: {

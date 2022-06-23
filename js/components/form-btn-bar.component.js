@@ -17,7 +17,7 @@ function FormBtnComponentCtrl($scope, $element, $attrs, $location, usersAPI) {
 }
 
 
-angular.module("appModule").component("ssFormbtn", {
+angular.module("formBtnBarModule").component("ssFormBtn", {
     templateUrl: "view/formBtnBar.html",
     controller: FormBtnComponentCtrl,
     bindings: {

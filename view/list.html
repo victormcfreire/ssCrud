@@ -12,7 +12,8 @@
         <h3>Lista</h3>
     </div>
     <div class="col-lg-10 form-bar" style="width: 50%; float: right;">
-        <ss-crudbtn ng-model="search" data="data" selectedusers="selectedUsers" toomanyusers="$ctrl.tooManyUsers"></ss-crudbtn>
+        <ss-crud-btn ng-model="search" data="data" selectedusers="selectedUsers" toomanyusers="$ctrl.tooManyUsers">
+        </ss-crud-btn>
     </div>
 </div>
 <div>
@@ -20,8 +21,5 @@
 </div>
 
 <div style="float: right;">
-    <dir-pagination-controls 
-        max-size = "7"
-        boundary-links = "true"
-        class="ml-pagination-numbers"></dir-pagination-controls>
+    <dir-pagination-controls max-size="7" boundary-links="true" class="ml-pagination-numbers"></dir-pagination-controls>
 </div>

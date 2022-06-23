@@ -1,8 +1,23 @@
-angular.module("appModule", ['ngRoute', 'angularUtils.directives.dirPagination'])
+angular
+    .module("appModule", [
+        'ngRoute', 
+        'angularUtils.directives.dirPagination', 
+        'listModule', 
+        'tableModule', 
+        'crudBtnBarModule', 
+        'searchBarModule', 
+        'newUserModule', 
+        'editFormModule', 
+        'formBtnBarModule'
+    ])
 
     .controller("appCtrl", function ($scope, usersAPI, $location) {
 
-        $scope.loadUsers = function () {
+        $scope.tooManyUsers = false;
+        $scope.selectedUsers = {};
+        $scope.loadUsers = loadUsers();
+
+        function loadUsers () {
             usersAPI.getUsers().
                 then(function (res) {
                     $scope.data = res.data;
@@ -10,10 +25,6 @@ angular.module("appModule", ['ngRoute', 'angularUtils.directives.dirPagination']
                     console.log(err);
                 });
         }
-
-        $scope.tooManyUsers = false;
-        
-        $scope.selectedUsers = {};
         
         $scope.result = function (data) {
             $scope.selectedUsers.result = [];
@@ -30,6 +41,7 @@ angular.module("appModule", ['ngRoute', 'angularUtils.directives.dirPagination']
                 $scope.noUserError = true;
             }
             else{
+                $scope.noUserError = false;
                 for (let i = 0; i < users.length; i++) {
                     const element = users[i];
                     usersAPI.deleteUsers(element.id).then(function (response) {
@@ -45,6 +57,6 @@ angular.module("appModule", ['ngRoute', 'angularUtils.directives.dirPagination']
             $location.path("/list");
         }
         
+        $scope.loadUsers;
         $scope.result();
-        $scope.loadUsers();
     });

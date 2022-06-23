@@ -1,0 +1,1 @@
+angular.module('listModule', ['angularUtils.directives.dirPagination']);

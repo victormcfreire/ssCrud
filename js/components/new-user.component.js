@@ -7,7 +7,7 @@ function NewUserCtrl($scope, $element, $attrs) {
     }
 }
 
-angular.module("appModule").component("ssNewuser", {
+angular.module("newUserModule").component("ssNewuser", {
     templateUrl: "view/newUser.html",
     controller: NewUserCtrl,
     bindings:{
