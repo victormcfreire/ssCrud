@@ -15,9 +15,8 @@ angular
 
         $scope.tooManyUsers = false;
         $scope.selectedUsers = {};
-        $scope.loadUsers = loadUsers();
 
-        function loadUsers () {
+        $scope.loadUsers = function () {
             usersAPI.getUsers().
                 then(function (res) {
                     $scope.data = res.data;
@@ -50,13 +49,13 @@ angular
                     })
                 };
             }
-        };
+        }
 
         $scope.backToList = function () {
             $('#excluirModal').modal('toggle');
             $location.path("/list");
         }
         
-        $scope.loadUsers;
+        $scope.loadUsers();
         $scope.result();
     });
