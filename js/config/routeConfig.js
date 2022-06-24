@@ -23,5 +23,6 @@ angular.module("appModule").config(function($routeProvider){
             },
         }
     })
+    
     $routeProvider.otherwise({ redirectTo: "/list" })
 });

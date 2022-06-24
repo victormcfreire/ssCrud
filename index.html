@@ -38,7 +38,7 @@
     <div ng-show="noUserError" class="alert alert-danger">
         Nenhum usuário selecionado
         <div style="float:right;">
-            <button type="button" class="close" ng-click="noUserError = false">
+            <button type="button" class="close" ng-click="noUserError = !noUserError">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>

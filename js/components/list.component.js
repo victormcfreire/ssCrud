@@ -1,7 +1,7 @@
-function ListComponentCtrl($scope, $element, $attrs) {
+function ListComponentCtrl($scope, $element, $attrs, usersAPI) {
     var ctrl = this;
     ctrl.tooManyUsers;
-
+    
 }
 
 angular.module("listModule").component('ssList', {

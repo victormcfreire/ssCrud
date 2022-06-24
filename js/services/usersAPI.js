@@ -1,7 +1,7 @@
 angular.module("appModule")
     .factory("usersAPI", function($http){
     
-        var _getUsers = function() {
+    var _getUsers = function() {
         return $http.get("http://localhost:3000/users/all");
     };
 
@@ -9,10 +9,10 @@ angular.module("appModule")
         return $http.get("http://localhost:3000/users/" + id);
     };
 
-    var _editUser = function(user, id) {
+    var _editUser = function(user) {
         return $http({
             method: 'PUT',
-            url: 'http://localhost:3000/users/'+ id,
+            url: 'http://localhost:3000/users/'+ user.id,
             data:{
                 name: user.name,
                 username: user.username,

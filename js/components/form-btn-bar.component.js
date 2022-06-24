@@ -9,7 +9,7 @@ function FormBtnComponentCtrl($scope, $element, $attrs, $location, usersAPI) {
             });
         }
         else if (ctrl.operation == "edit") {
-            usersAPI.editUser(user, user.id).then(function (response) {
+            usersAPI.editUser(user).then(function (response) {
                 $location.path("/list");
             });
         }
@@ -22,7 +22,6 @@ angular.module("formBtnBarModule").component("ssFormBtn", {
     controller: FormBtnComponentCtrl,
     bindings: {
         scopeuser: "=",
-        receivingData: "=data",
         operation: "@"
     }
 });
